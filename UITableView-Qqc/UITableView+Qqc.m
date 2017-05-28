@@ -27,4 +27,17 @@
     [self registerNib:nib forCellReuseIdentifier:identifier];
 }
 
+// 注册Cell
+- (void)registerNibWithName:(NSString *)strNib
+{
+    [self registerNib:[UINib nibWithNibName:strNib bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[NSString stringWithFormat:@"%@Identity", NSStringFromClass([self class])]];
+}
+
+// 注册Cell
+- (void)registerNibWithName:(NSString *)strNib bundle:(NSString*)strBundleName
+{
+    NSBundle* bundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:strBundleName ofType:@"bundle"]];
+    [self registerNib:[UINib nibWithNibName:strNib bundle:bundle] forCellReuseIdentifier:[NSString stringWithFormat:@"%@Identity", NSStringFromClass([self class])]];
+}
+
 @end

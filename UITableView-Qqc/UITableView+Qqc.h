@@ -21,4 +21,11 @@
  */
 - (void)registerNibWithClass:(Class)nibClass forCellWithReuseIdentifier:(NSString *)identifier inBundle:(NSBundle*)bundle;
 
+
+// 注册Cell
+- (void)registerNibWithName:(NSString *)strNib;
+
+// 注册Cell
+- (void)registerNibWithName:(NSString *)strNib bundle:(NSString*)strBundleName;
+
 @end
